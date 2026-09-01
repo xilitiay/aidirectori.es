@@ -1,0 +1,39 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-instrument-serif: "Instrument Serif", Georgia, serif;
+}
+
+html {
+  font-family: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+/* Display serif used for big marketing headings (matches original Instrument Serif usage) */
+.font-display {
+  font-family: var(--font-instrument-serif);
+}
+
+/* Logo marquee */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}

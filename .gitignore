@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+build/
+
+# typescript cache
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# internal memory / logs
+.workbuddy/
+*.log
+
+# backup data
+data/_bak_*.json
+
+# env / secrets
+.env
+.env.local
+.env*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# scraped reference mirror (not part of the app; data already in data/*.json)
+_mirror/
