@@ -11,10 +11,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { category: string } }) {
   const name = decodeURIComponent(params.category);
   const exists = getCategories().some((c) => c.name === name);
-  if (!exists) return { title: "分类 | 外贸独立站导航" };
+  if (!exists) return { title: "Category | AI Directories" };
   return {
-    title: `${name} 独立站 | 外贸独立站导航`,
-    description: `发现收录于外贸独立站导航的 ${name} 独立站。`,
+    title: `${name} AI tools | AI Directories`,
+    description: `Discover ${name} AI tools listed on AI Directories.`
   };
 }
 
@@ -35,13 +35,13 @@ export default function CategoryPage({
           href="/categories"
           className="text-[14px] text-gray-900/50 hover:text-gray-900"
         >
-          ← 全部分类
+          ← All categories
         </Link>
         <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900">
-          {name} <span className="font-instrument-serif italic">独立站</span>
+          {name} <span className="font-instrument-serif italic">AI tools</span>
         </h1>
         <p className="mt-4 text-[15px] text-gray-900/50">
-          {list.length} 个独立站
+          {list.length} tool{list.length === 1 ? "" : "s"}
         </p>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {list.map((t) => (

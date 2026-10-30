@@ -10,14 +10,14 @@ export default function ToolExplorer({ tools }: { tools: Tool[] }) {
 
   const categories = useMemo(() => {
     const c = new Set<string>();
-    tools.forEach((t) => c.add(t.category || "独立站"));
+    tools.forEach((t) => c.add(t.category || "AI Tools"));
     return ["All", ...Array.from(c).sort()];
   }, [tools]);
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return tools.filter((t) => {
-      if (cat !== "All" && (t.category || "独立站") !== cat) return false;
+      if (cat !== "All" && (t.category || "AI Tools") !== cat) return false;
       if (!needle) return true;
       return (
         t.name.toLowerCase().includes(needle) ||
@@ -35,7 +35,7 @@ export default function ToolExplorer({ tools }: { tools: Tool[] }) {
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="搜索外贸独立站…"
+            placeholder="Search 1,325 AI tools…"
             className="w-full rounded-full border border-gray-200 bg-white py-3 pl-12 pr-4 text-[15px] text-gray-900 placeholder:text-gray-400 outline-none focus:border-[#66CC8A]/60 focus:ring-2 focus:ring-[#66CC8A]/20"
           />
           <svg
@@ -65,7 +65,7 @@ export default function ToolExplorer({ tools }: { tools: Tool[] }) {
           ))}
         </div>
         <div className="text-[13px] text-gray-900/50">
-          {filtered.length} 个独立站
+          {filtered.length} tool{filtered.length === 1 ? "" : "s"}
         </div>
       </div>
 
@@ -120,7 +120,7 @@ export default function ToolExplorer({ tools }: { tools: Tool[] }) {
 
       {filtered.length === 0 && (
         <div className="mt-16 text-center text-gray-900/50">
-          没有找到匹配的独立站“{q}”。
+          No tools match “{q}”.
         </div>
       )}
     </div>

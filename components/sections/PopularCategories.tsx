@@ -10,18 +10,19 @@ export default function PopularCategories() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">
-              按品类浏览
-              <span className="font-instrument-serif italic"> 独立站</span>
+              Browse by{" "}
+              <span className="font-instrument-serif italic">category</span>
             </h2>
             <p className="mt-3 text-[15px] text-gray-900/50 max-w-xl">
-              已收录 {getCategories().length} 个外贸独立站品类，每个都经过人工精选与持续更新。
+              Explore {getCategories().length} categories of AI tools — each one
+              hand-picked, reviewed and kept up to date.
             </p>
           </div>
           <Link
             href="/categories"
             className="hidden sm:inline-flex items-center gap-1 text-[14px] font-medium text-[#3D8054] hover:underline whitespace-nowrap"
           >
-            查看全部 →
+            View all →
           </Link>
         </div>
 
@@ -46,7 +47,7 @@ export default function PopularCategories() {
           href="/categories"
           className="mt-8 inline-flex sm:hidden items-center gap-1 text-[14px] font-medium text-[#3D8054] hover:underline"
         >
-          查看全部分类 →
+          View all categories →
         </Link>
       </div>
     </section>

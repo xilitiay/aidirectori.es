@@ -11,9 +11,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const t = getTool(params.slug);
-  if (!t) return { title: "独立站 | 外贸独立站导航" };
+  if (!t) return { title: "AI Tool | AI Directories" };
   return {
-    title: `${t.name} | 外贸独立站导航`,
+    title: `${t.name} | AI Directories`,
     description: t.description?.slice(0, 160),
   };
 }
@@ -90,11 +90,11 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
   };
 
   const facts: { label: string; value: string }[] = [];
-  if (tool.price) facts.push({ label: "定价", value: tool.price });
-  if (released) facts.push({ label: "上线时间", value: released });
+  if (tool.price) facts.push({ label: "Pricing", value: tool.price });
+  if (released) facts.push({ label: "Released", value: released });
   if (tool.operatingSystem)
-    facts.push({ label: "平台", value: tool.operatingSystem });
-  facts.push({ label: "分类", value: tool.category });
+    facts.push({ label: "Platform", value: tool.operatingSystem });
+  facts.push({ label: "Category", value: tool.category });
 
   return (
       <main className="bg-[#F5F6F8] min-h-screen">
@@ -108,7 +108,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
           href="/ai-tools"
           className="text-[14px] text-gray-900/50 hover:text-gray-900"
         >
-          ← 全部独立站
+          ← All AI tools
         </Link>
 
         <div className="mt-6 flex items-start gap-5">
@@ -158,13 +158,13 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 text-[14px] font-semibold text-white bg-[#66CC8A] hover:bg-[#54AF74] rounded-full transition-colors"
           >
-            访问官网
+            Visit website
           </a>
           <a
             href={`/ai-tools/alternatives/${tool.slug}`}
             className="inline-flex items-center justify-center px-6 py-3 text-[14px] font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 rounded-full transition-colors"
           >
-            查看替代方案
+            View alternatives
           </a>
         </div>
 
@@ -190,7 +190,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         {/* About */}
         {tool.description && (
           <section className="mt-10">
-            <h2 className="text-xl font-medium text-gray-900">关于 {tool.name}</h2>
+            <h2 className="text-xl font-medium text-gray-900">About {tool.name}</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-gray-900/70 whitespace-pre-line">
               {tool.description}
             </p>
@@ -201,7 +201,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         {tool.faqs && tool.faqs.length > 0 && (
           <section className="mt-12">
             <h2 className="text-xl font-medium text-gray-900">
-              {tool.name} 评测
+              {tool.name} review
             </h2>
             <div className="mt-5 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
               {tool.faqs.map((item, i) => (
@@ -232,11 +232,11 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
                 href={`/ai-tools/alternatives/${tool.slug}`}
                 className="text-[13px] text-[#3D8054] hover:underline shrink-0"
               >
-                查看全部 {alternatives.length}+ →
+                View all {alternatives.length}+ →
               </Link>
             </div>
             <p className="mt-2 text-[14px] text-gray-900/50">
-              读者还在对比的同类站点。
+              Similar tools our readers also compare.
             </p>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
               {alternatives.map((t) => (
@@ -291,7 +291,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
         {related.length > 0 && (
           <div className="mt-14">
             <h2 className="text-xl font-medium text-gray-900">
-              更多「{tool.category}」类站点
+              More in {tool.category}
             </h2>
             <div className="mt-5 grid sm:grid-cols-2 gap-4">
               {related.map((t) => (

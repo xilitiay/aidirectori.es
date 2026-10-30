@@ -4,8 +4,8 @@ const cols = [
   {
     title: "Product",
     links: [
-      { href: "/directories", label: "收录目录" },
-      { href: "/ai-tools", label: "独立站" },
+      { href: "/directories", label: "Directories" },
+      { href: "/ai-tools", label: "AI Tools" },
       { href: "/pricing", label: "Pricing" },
       { href: "/#features", label: "Features" },
     ],
@@ -22,7 +22,7 @@ const cols = [
   {
     title: "Company",
     links: [
-      { href: "/categories", label: "热门分类" },
+      { href: "/#meet-creators", label: "Meet Creators" },
       { href: "/#results", label: "Results" },
       { href: "/pricing", label: "Get Started" },
     ],
@@ -41,10 +41,11 @@ export default function Footer() {
                   <path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2L12 2z" fill="white" />
                 </svg>
               </div>
-              <span className="font-bold text-gray-800">外贸独立站导航</span>
+              <span className="font-bold text-gray-800">AI Directories</span>
             </div>
             <p className="text-[14px] text-gray-900/50 max-w-xs">
-              按品类精选跨境 DTC 与 B2B 独立站，帮你快速发现合适的出海站点、品牌与供货渠道。
+              We manually submit your AI startup to 100+ directories to boost backlinks,
+              SEO, and traffic.
             </p>
           </div>
           {cols.map((c) => (
@@ -63,7 +64,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-10 pt-6 border-t border-dashed border-gray-300/60 text-[13px] text-gray-900/40">
-          © {new Date().getFullYear()} 外贸独立站导航. All rights reserved.
+          © {new Date().getFullYear()} AI Directories. All rights reserved.
         </div>
       </div>
     </footer>

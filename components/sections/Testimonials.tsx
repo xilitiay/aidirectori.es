@@ -1,21 +1,39 @@
 const testimonials = [
   {
     quote:
-      "在这里一次性对比了十几个服装独立站，选品和定价参考非常直接，省下了大量调研时间。",
-    name: "林晓",
-    role: "跨境电商卖家",
+      "I think it's cheap where less than a week in to having the submissions complete traffic is up and back links are up",
+    name: "Lilybank AI",
+    role: "@lilybankai",
   },
   {
     quote:
-      "B2B 批发频道帮我快速对接到靠谱的工厂与贸易商，询盘效率明显提升。",
-    name: "David Chen",
-    role: "外贸采购",
+      "Suddenly getting 10+ signups a day to @TypePrompt I attribute it to @s_chiriac listing the platform on over 60 AI directories through his productised service 👏",
+    name: "Travis Street",
+    role: "@travisstreet_",
   },
   {
     quote:
-      "博客里的建站与支付教程很实用，新手也能照着把第一个独立站跑起来。",
-    name: "王磊",
-    role: "独立站运营",
+      "I have used it personally to find high-quality directories to register my startup. Great initiative!!",
+    name: "imri",
+    role: "@imri",
+  },
+  {
+    quote:
+      "Someone had to do it, and I have to say it's beautifully done. A ton of help when you're launching and need to spread the word about your product! Great work Sergiu 🔥",
+    name: "Dan Mindru",
+    role: "@dan_mindru",
+  },
+  {
+    quote:
+      "With all the AI directories it's honestly impossible to keep up with. Sergiu does a good job polishing his list. Good luck!",
+    name: "Nic Polotnianko",
+    role: "@polnikale",
+  },
+  {
+    quote:
+      "One of the most important place to visit once you launch your product. AI directories has all the possible directories where you can list your product and market it.",
+    name: "Manoj Ahirwar",
+    role: "@manoj_ahirwar",
   },
 ];
 
@@ -29,13 +47,14 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900">
-            出海卖家的<span className="font-instrument-serif italic"> 信赖之选</span>
+            1000+ founders already{" "}
+            <span className="font-instrument-serif italic">growing with us.</span>
           </h2>
           <p className="mt-4 text-[15px] sm:text-[16px] text-gray-900/50">
-            已有 1000+ 出海卖家通过我们筛选站点与渠道。
+            Don&apos;t take our word for it — here&apos;s what real founders say.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <div key={t.name} className="rounded-2xl border border-gray-100 bg-[#F5F6F8] p-7">
               <p className="text-[15px] text-gray-900/70 leading-relaxed">“{t.quote}”</p>

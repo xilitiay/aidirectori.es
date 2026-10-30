@@ -10,18 +10,19 @@ export default function LatestBlog() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">
-              最新博客
-              <span className="font-instrument-serif italic"> 洞察</span>
+              Latest from the{" "}
+              <span className="font-instrument-serif italic">blog</span>
             </h2>
             <p className="mt-3 text-[15px] text-gray-900/50 max-w-xl">
-              建站、选品、营销与合规实战，帮你把外贸独立站真正做起来。
+              Guides, reviews and playbooks for getting your AI tool discovered
+              and growing.
             </p>
           </div>
           <Link
             href="/blog"
             className="hidden sm:inline-flex items-center gap-1 text-[14px] font-medium text-[#3D8054] hover:underline whitespace-nowrap"
           >
-            全部文章 →
+            All posts →
           </Link>
         </div>
 
@@ -62,7 +63,7 @@ export default function LatestBlog() {
                   {p.description}
                 </p>
                 <div className="mt-3 text-[12px] text-gray-900/40">
-                  作者 {p.author}
+                  By {p.author}
                 </div>
               </div>
             </Link>
@@ -73,7 +74,7 @@ export default function LatestBlog() {
           href="/blog"
           className="mt-8 inline-flex sm:hidden items-center gap-1 text-[14px] font-medium text-[#3D8054] hover:underline"
         >
-          全部文章 →
+          All posts →
         </Link>
       </div>
     </section>

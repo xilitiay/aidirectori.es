@@ -14,10 +14,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const t = getTool(params.slug);
   const n = t?.alternatives?.length ?? 0;
-  if (!t) return { title: "独立站替代方案 | 外贸独立站导航" };
+  if (!t) return { title: "AI Tool Alternatives | AI Directories" };
   return {
-    title: `${n}+ 个最佳 ${t.name} 替代独立站 (2026)`,
-    description: `读者最常对比的 ${t.name} 替代独立站。浏览 ${n}+ 个与 ${t.name} 类似的外贸独立站。`,
+    title: `${n}+ Best ${t.name} Alternatives (2026)`,
+    description: `The best ${t.name} alternatives our readers compare. Browse ${n}+ similar AI tools like ${t.name}.`,
   };
 }
 
@@ -82,14 +82,14 @@ export default function AlternativesPage({
           href="/ai-tools"
           className="text-[14px] text-gray-900/50 hover:text-gray-900"
         >
-          ← 全部独立站
+          ← All AI tools
         </Link>
 
         <h1 className="mt-6 text-3xl sm:text-4xl font-medium text-gray-900">
-          {tool.name} 的最佳替代独立站
+          Best {tool.name} Alternatives
         </h1>
         <p className="mt-3 text-[15px] text-gray-900/60">
-          读者最常对比与切换的 {alternatives.length}+ 个与 {tool.name} 类似的外贸独立站。
+          {alternatives.length}+ tools like {tool.name} that our readers compare and switch between.
         </p>
 
         {/* Subject tool */}
@@ -119,7 +119,7 @@ export default function AlternativesPage({
             href={`/ai-tools/${tool.slug}`}
             className="text-[13px] text-[#3D8054] hover:underline shrink-0"
           >
-            查看 →
+            View →
           </Link>
         </div>
 
@@ -135,7 +135,7 @@ export default function AlternativesPage({
             href="/ai-tools"
             className="inline-flex items-center justify-center px-6 py-3 text-[14px] font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 rounded-full transition-colors"
           >
-            浏览全部独立站
+            Browse all AI tools
           </Link>
         </div>
       </div>

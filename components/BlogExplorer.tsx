@@ -91,7 +91,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPreview[] }) {
                 {p.description}
               </p>
               <div className="mt-3 text-[12px] text-gray-900/40">
-                作者 {p.author}
+                By {p.author}
               </div>
             </div>
           </Link>
@@ -99,7 +99,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPreview[] }) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="mt-10 text-center text-gray-900/40">该分类下暂无文章。</p>
+        <p className="mt-10 text-center text-gray-900/40">No posts in this category.</p>
       )}
     </div>
   );

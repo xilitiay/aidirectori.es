@@ -53,37 +53,37 @@ export default function Navbar() {
               </svg>
             </div>
             <span className="font-bold text-base md:text-xl text-gray-800 whitespace-nowrap">
-              外贸独立站导航
+              AI Directories
             </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-4 flex-shrink-0 min-w-0">
-            <NavLink href="/directories">收录目录</NavLink>
-            <NavLink href="/categories">分类</NavLink>
-            <NavLink href="/#features">功能</NavLink>
-            <NavLink href="/pricing">定价</NavLink>
+            <NavLink href="/directories">Directories</NavLink>
+            <NavLink href="/categories">Categories</NavLink>
+            <NavLink href="/#features">Features</NavLink>
+            <NavLink href="/pricing">Pricing</NavLink>
             <Dropdown
-              label="独立站"
+              label="AI Tools"
               items={[
-                { href: "/ai-tools", label: "全部独立站" },
-                { href: "/ai-tools/shein", label: "SHEIN" },
-                { href: "/ai-tools/anker", label: "Anker" },
-                { href: "/ai-tools/made-in-china", label: "Made-in-China" },
+                { href: "/ai-tools", label: "All AI Tools" },
+                { href: "/ai-tools/brandreply", label: "BrandReply" },
+                { href: "/ai-tools/toolfolio", label: "Toolfolio" },
+                { href: "/ai-tools/software-architecture", label: "Software Architecture AI" },
               ]}
             />
             <Dropdown
-              label="入驻"
+              label="Marketplace"
               items={[
-                { href: "/directories", label: "浏览收录目录" },
-                { href: "/directories", label: "提交你的站点" },
+                { href: "/directories", label: "Browse Directories" },
+                { href: "/directories", label: "Submit to Marketplace" },
               ]}
             />
             <Dropdown
-              label="更多"
+              label="More"
               items={[
-                { href: "/blog", label: "博客" },
-                { href: "/#testimonials", label: "用户评价" },
-                { href: "/categories", label: "热门分类" },
+                { href: "/blog", label: "Blog" },
+                { href: "/#testimonials", label: "Testimonials" },
+                { href: "/#meet-creators", label: "Meet Creators" },
               ]}
             />
           </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
               href="/pricing"
               className="inline-flex h-10 items-center justify-center gap-1.5 px-5 text-[14px] font-semibold text-white bg-[#66CC8A] hover:bg-[#54AF74] rounded-full transition-colors"
             >
-              提交站点
+              Submit
             </Link>
           </div>
 
@@ -122,11 +122,11 @@ export default function Navbar() {
             <Link href="/categories" className="block px-3 py-2 text-gray-700">Categories</Link>
             <Link href="/#features" className="block px-3 py-2 text-gray-700">Features</Link>
             <Link href="/pricing" className="block px-3 py-2 text-gray-700">Pricing</Link>
-            <Link href="/ai-tools" className="block px-3 py-2 text-gray-700">独立站</Link>
+            <Link href="/ai-tools" className="block px-3 py-2 text-gray-700">AI Tools</Link>
             <Link href="/blog" className="block px-3 py-2 text-gray-700">Blog</Link>
             <Link href="/auth/signin" className="block px-3 py-2 text-gray-700">Login</Link>
             <Link href="/pricing" className="block px-3 py-2 text-center font-semibold text-white bg-[#66CC8A] rounded-full mt-2">
-              提交站点
+              Submit
             </Link>
           </div>
         )}

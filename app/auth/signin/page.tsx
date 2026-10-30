@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
-export const metadata = { title: "登录 | 外贸独立站导航" };
+export const metadata = { title: "Login | AI Directories" };
 
 export default function SignInPage() {
   return (
@@ -10,9 +10,9 @@ export default function SignInPage() {
       <Navbar />
       <div className="flex items-center justify-center px-4 py-16">
         <div className="w-full max-w-md bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-          <h1 className="text-2xl font-medium text-gray-900 text-center">欢迎回来</h1>
+          <h1 className="text-2xl font-medium text-gray-900 text-center">Welcome back</h1>
           <p className="text-center text-[14px] text-gray-900/50 mt-2">
-            登录你的外贸独立站导航账号。
+            Sign in to your AI Directories account.
           </p>
           <form className="mt-6 space-y-4">
             <div>
@@ -35,13 +35,13 @@ export default function SignInPage() {
               type="submit"
               className="w-full py-3 rounded-full font-semibold text-[14px] text-white bg-[#66CC8A] hover:bg-[#54AF74] transition-colors"
             >
-              登录
+              Sign in
             </button>
           </form>
           <p className="text-center text-[14px] text-gray-900/50 mt-5">
-            还没有账号？{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/pricing" className="text-[#3D8054] font-medium">
-              立即开始
+              Get started
             </Link>
           </p>
         </div>

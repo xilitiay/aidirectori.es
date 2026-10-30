@@ -10,8 +10,8 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const p = getPost(params.slug);
-  if (!p) return { title: "博客 | 外贸独立站导航" };
-  return { title: `${p.title} | 外贸独立站导航`, description: p.description };
+  if (!p) return { title: "Blog | AI Directories" };
+  return { title: `${p.title} | AI Directories`, description: p.description };
 }
 
 function renderBody(body: string) {
@@ -58,7 +58,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     author: { "@type": "Person", name: post.author },
     publisher: {
       "@type": "Organization",
-      name: "外贸独立站导航",
+      name: "AI Directories",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -79,7 +79,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           href="/blog"
           className="text-[14px] text-gray-900/50 hover:text-gray-900"
         >
-          ← 全部文章
+          ← All posts
         </Link>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -95,7 +95,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           {post.title}
         </h1>
         <p className="mt-3 text-[15px] text-gray-900/50">
-          作者{" "}
+          By{" "}
           <Link
             href={`/blog/author/${encodeURIComponent(post.author)}`}
             className="text-[#3D8054] hover:underline"
@@ -122,7 +122,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         {related.length > 0 && (
           <div className="mt-14">
             <h2 className="text-xl font-medium text-gray-900">
-              更多「{post.tag}」文章
+              More in {post.tag}
             </h2>
             <div className="mt-5 grid sm:grid-cols-3 gap-4">
               {related.map((p) => (
@@ -153,7 +153,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 href={`/blog/author/${encodeURIComponent(post.author)}`}
                 className="text-[14px] font-medium text-[#3D8054] hover:underline"
               >
-                查看主页 →
+                View profile →
               </Link>
             </div>
             <div className="mt-5 grid sm:grid-cols-3 gap-4">

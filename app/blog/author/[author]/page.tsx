@@ -10,7 +10,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { author: string } }) {
   const name = decodeURIComponent(params.author);
-  return { title: `${name} | 外贸独立站导航博客` };
+  return { title: `${name} | AI Directories Blog` };
 }
 
 function initials(name: string) {
@@ -38,7 +38,7 @@ export default function AuthorPage({ params }: { params: { author: string } }) {
           href="/blog"
           className="text-[14px] text-gray-900/50 hover:text-gray-900"
         >
-          ← 全部文章
+          ← All posts
         </Link>
 
         <div className="mt-6 flex items-center gap-4">
@@ -50,7 +50,7 @@ export default function AuthorPage({ params }: { params: { author: string } }) {
               {name}
             </h1>
             <p className="mt-1 text-[14px] text-gray-900/50">
-              {author.count} {author.count === 1 ? "篇文章" : "篇文章"}
+              {author.count} {author.count === 1 ? "post" : "posts"}
             </p>
           </div>
         </div>

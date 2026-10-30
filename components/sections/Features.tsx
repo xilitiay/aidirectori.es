@@ -1,27 +1,23 @@
 const features = [
   {
-    title: "12 大品类",
-    desc: "覆盖服装、3C、家居、美妆、户外、汽配、宠物、B2B 等外贸独立站核心品类。",
+    title: "100+ Directories, One Submission",
+    desc: "Submit once. We'll handle manual submissions across all top AI directories.",
   },
   {
-    title: "人工精选",
-    desc: "每个站点都经过人工筛选与持续更新，剔除低质与失效链接。",
+    title: "High-Authority Backlinks",
+    desc: "Build links from trusted, high-DR platforms that Google loves.",
   },
   {
-    title: "DTC 与 B2B",
-    desc: "同时收录面向消费者的 DTC 品牌站与面向采购的 B2B 批发站。",
+    title: "Reach Active AI Enthusiasts",
+    desc: "Get discovered by early adopters, creators, and founders looking for new tools.",
   },
   {
-    title: "替代方案",
-    desc: "为热门站点提供替代独立站推荐，方便横向对比与选品。",
+    title: "Attract Real Users, Effortlessly",
+    desc: "Get your tool listed within days and start attracting real users faster than organic SEO alone.",
   },
   {
-    title: "双语内容",
-    desc: "站点介绍、FAQ 与博客均为中英文双语，兼顾国内外出海团队。",
-  },
-  {
-    title: "持续更新",
-    desc: "紧跟平台与品类变化，定期补充新站点与最新实战文章。",
+    title: "Detailed Submission Report",
+    desc: "Receive a full, transparent report of every site your tool appears on.",
   },
 ];
 
@@ -31,10 +27,14 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900">
-            发现优质外贸独立站<span className="font-instrument-serif italic"> 所需的一切</span>
+            Why Founders <span className="font-instrument-serif italic">love us</span>
           </h2>
           <p className="mt-4 text-[15px] sm:text-[16px] text-gray-900/50">
-            一个为出海卖家打造的跨境独立站导航。
+            Built for founders who want visibility without the{" "}
+            <span className="font-medium text-gray-900/80">Busy work</span>
+          </p>
+          <p className="mt-2 text-[14px] text-gray-900/40">
+            From SEO to reach, every submission helps your startup grow smarter.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

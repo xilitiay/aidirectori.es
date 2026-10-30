@@ -1,18 +1,23 @@
 const steps = [
   {
     n: "01",
-    title: "浏览与筛选",
-    desc: "按品类、平台或关键词搜索，快速找到符合你需求的外贸独立站与供货渠道。",
+    title: "Choose plan",
+    desc: "Pick the submission package that matches your stage and goals.",
   },
   {
     n: "02",
-    title: "查看替代方案",
-    desc: "在任一站点页查看同类替代独立站，横向对比定位、定价与模式。",
+    title: "Submit your details",
+    desc: "Share your tool URL, assets, and listing info — once, in the dashboard.",
   },
   {
     n: "03",
-    title: "学习与上线",
-    desc: "结合博客的建站、选品、支付与合规实战，把你的独立站跑起来。",
+    title: "Manual submission",
+    desc: "Our team submits your tool across 100+ high-DR directories by hand.",
+  },
+  {
+    n: "04",
+    title: "Receive report",
+    desc: "Get a clear report with links and status for every listing we submit.",
   },
 ];
 
@@ -22,13 +27,14 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900">
-            使用<span className="font-instrument-serif italic"> 流程</span>
+            How it <span className="font-instrument-serif italic">works</span>
           </h2>
           <p className="mt-4 text-[15px] sm:text-[16px] text-gray-900/50">
-            简单三步，找到并做成你的外贸独立站。
+            Four clear steps from plan to proof — we handle the directory grind so you
+            can focus on building.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s) => (
             <div
               key={s.n}

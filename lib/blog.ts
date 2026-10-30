@@ -54,13 +54,6 @@ export const AUTHOR_META: Record<
       { label: "Twitter", url: "https://twitter.com/s_chiriac" },
     ],
   },
-  "外贸独立站观察": {
-    bio: "外贸独立站观察专注于跨境 DTC 与 B2B 独立站研究，持续输出建站、选品、支付、物流、SEO 与合规方面的实战内容，帮助中国出海卖家把独立站做起来。",
-    social: [
-      { label: "Shopify", url: "https://www.shopify.com" },
-      { label: "店匠 Shoplazza", url: "https://www.shoplazza.com" },
-    ],
-  },
 };
 
 export function getAuthorMeta(name: string) {

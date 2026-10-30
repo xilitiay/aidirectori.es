@@ -29,3 +29,6 @@ Thumbs.db
 
 # scraped reference mirror (not part of the app; data already in data/*.json)
 _mirror/
+
+# stale assets from the previous content layer (moved out of public/)
+_stale_assets/

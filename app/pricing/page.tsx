@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/sections/Pricing";
 
-export const metadata = { title: "定价 | 外贸独立站导航" };
+export const metadata = { title: "Pricing | AI Directories" };
 
 export default function PricingPage() {
   return (

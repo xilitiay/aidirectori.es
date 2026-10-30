@@ -7,12 +7,12 @@ export default function NotFound() {
         <h1 className="text-5xl font-medium text-gray-900 font-instrument-serif italic">
           404
         </h1>
-        <p className="mt-3 text-gray-900/50">没有找到这个页面。</p>
+        <p className="mt-3 text-gray-900/50">This page could not be found.</p>
         <Link
           href="/"
           className="inline-flex mt-6 items-center justify-center px-6 py-3 text-[14px] font-semibold text-white bg-[#66CC8A] hover:bg-[#54AF74] rounded-full transition-colors"
         >
-          返回首页
+          Back home
         </Link>
       </div>
     </main>
