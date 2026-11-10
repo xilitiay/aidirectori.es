@@ -40,6 +40,23 @@ export function getLatestPosts(limit = 3) {
     .slice(0, limit);
 }
 
+export function getTags() {
+  const map = new Map<string, number>();
+  for (const p of posts) {
+    if (!p.tag) continue;
+    map.set(p.tag, (map.get(p.tag) || 0) + 1);
+  }
+  return Array.from(map.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+export function getPostsByTag(tag: string) {
+  return posts
+    .filter((p) => p.tag === tag)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
 export type AuthorSocial = { label: string; url: string };
 
 // 作者简介与社交链接（从镜像页抽取；新增作者时在此补充）

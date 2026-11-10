@@ -6,6 +6,14 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
+  async redirects() {
+    return [
+      { source: "/submit", destination: "/submit-ai-tool", permanent: true },
+      { source: "/about", destination: "/about-us", permanent: true },
+      { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      { source: "/terms", destination: "/tos", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

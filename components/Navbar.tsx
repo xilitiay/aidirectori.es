@@ -82,6 +82,8 @@ export default function Navbar() {
               label="More"
               items={[
                 { href: "/blog", label: "Blog" },
+                { href: "/tools", label: "Free Tools" },
+                { href: "/about-us", label: "About us" },
                 { href: "/#testimonials", label: "Testimonials" },
                 { href: "/#meet-creators", label: "Meet Creators" },
               ]}
@@ -96,7 +98,7 @@ export default function Navbar() {
               Login
             </Link>
             <Link
-              href="/pricing"
+              href="/submit-ai-tool"
               className="inline-flex h-10 items-center justify-center gap-1.5 px-5 text-[14px] font-semibold text-white bg-[#66CC8A] hover:bg-[#54AF74] rounded-full transition-colors"
             >
               Submit
@@ -123,9 +125,11 @@ export default function Navbar() {
             <Link href="/#features" className="block px-3 py-2 text-gray-700">Features</Link>
             <Link href="/pricing" className="block px-3 py-2 text-gray-700">Pricing</Link>
             <Link href="/ai-tools" className="block px-3 py-2 text-gray-700">AI Tools</Link>
+            <Link href="/tools" className="block px-3 py-2 text-gray-700">Free Tools</Link>
+            <Link href="/about-us" className="block px-3 py-2 text-gray-700">About us</Link>
             <Link href="/blog" className="block px-3 py-2 text-gray-700">Blog</Link>
             <Link href="/auth/signin" className="block px-3 py-2 text-gray-700">Login</Link>
-            <Link href="/pricing" className="block px-3 py-2 text-center font-semibold text-white bg-[#66CC8A] rounded-full mt-2">
+            <Link href="/submit-ai-tool" className="block px-3 py-2 text-center font-semibold text-white bg-[#66CC8A] rounded-full mt-2">
               Submit
             </Link>
           </div>

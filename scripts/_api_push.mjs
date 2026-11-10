@@ -17,12 +17,25 @@ const H = {
 
 const BIN_EXT = new Set([".png", ".jpg", ".jpeg", ".ico", ".woff2", ".gif", ".webp", ".ttf"]);
 
-async function gh(method, url, body) {
-  const r = await fetch("https://api.github.com" + url, {
-    method,
-    headers: H,
-    body: body ? JSON.stringify(body) : undefined,
-  });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function gh(method, url, body, attempt = 0) {
+  let r;
+  try {
+    r = await fetch("https://api.github.com" + url, {
+      method,
+      headers: H,
+      body: body ? JSON.stringify(body) : undefined,
+    });
+  } catch (e) {
+    // Retry only on transient network/socket failures (e.g. sandbox drops the
+    // TLS connection mid-stream), not on HTTP error responses.
+    if (attempt < 5) {
+      await sleep(1000 * 2 ** attempt);
+      return gh(method, url, body, attempt + 1);
+    }
+    throw e;
+  }
   const j = await r.json().catch(() => ({}));
   if (!r.ok) throw new Error(`${method} ${url} -> ${r.status}: ${JSON.stringify(j).slice(0, 300)}`);
   return j;
@@ -59,6 +72,7 @@ for (const f of files) {
   tree.push({ path: f, mode: "100644", type: "blob", sha: blob.sha });
   n++;
   if (n % 20 === 0) console.log("  blobs:", n);
+  await sleep(60);
 }
 console.log("blobs created:", n);
 
@@ -69,11 +83,12 @@ console.log("tree:", newTree.sha.slice(0, 7));
 // 4. commit
 const commit = await gh("POST", `/repos/${REPO}/git/commits`, {
   message:
-    "Restore aidirectori.es: original AI content + English UI\n\n" +
-    "- data: 1325 AI tools + 173 English blog posts (Sergiu Chiriac)\n" +
-    "- UI reverted to English per live site copy (Hero/Features/HowItWorks/\n" +
-    "  Pricing/Testimonials/Marquee/Navbar/Footer/Directory Database)\n" +
-    "- add MeetCreator section; drop stale foreign-trade assets",
+    "Add directory system, free-tools hub, and static pages\n\n" +
+    "- Directories: data-driven listing, detail, category, free pages (139 dirs)\n" +
+    "- Compare / tags / keywords aggregation pages\n" +
+    "- /submit-ai-tool, /tools free-tools hub (+24 sub-pages)\n" +
+    "- /about-us, /tos, /privacy-policy static pages\n" +
+    "- Navbar/Footer links + 308 redirects + sitemap",
   tree: newTree.sha,
   parents: [parentSha],
 });

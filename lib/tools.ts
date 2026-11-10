@@ -77,3 +77,20 @@ export function getAlternatives(slug: string) {
     .map((s) => getTool(s))
     .filter((t): t is Tool => Boolean(t));
 }
+
+// 预定义 AI 领域关键词（用于 /keywords 聚合页，从工具 name/description/category 派生）
+export const KEYWORDS = [
+  "chatbot", "image generation", "video", "writing", "coding", "audio",
+  "productivity", "marketing", "sales", "design", "data analysis", "automation",
+  "ai agent", "voice", "transcription", "translation", "seo", "customer support",
+  "meeting", "notes", "presentation", "avatar", "art", "music", "research",
+  "analytics", "social media", "email", "copywriting", "website builder",
+];
+
+export function getToolsByKeyword(keyword: string) {
+  const terms = keyword.toLowerCase().split(/\s+/).filter(Boolean);
+  return tools.filter((t) => {
+    const hay = `${t.name || ""} ${t.description || ""} ${t.category || ""}`.toLowerCase();
+    return terms.some((term) => hay.includes(term));
+  });
+}

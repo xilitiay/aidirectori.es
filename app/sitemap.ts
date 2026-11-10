@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
-import { tools, getCategories } from "@/lib/tools";
-import { posts, getAuthors } from "@/lib/blog";
+import { tools, getCategories, KEYWORDS } from "@/lib/tools";
+import { posts, getAuthors, getTags } from "@/lib/blog";
+import { directories, getDirectoryCategories } from "@/lib/directories";
+import { freeTools } from "@/lib/freeTools";
 
 const BASE = "https://aidirectori.es";
 
@@ -39,6 +41,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     }));
 
+  const directoryRoutes = directories.map((d) => ({
+    url: `${BASE}/directories/${d.slug}`,
+    lastModified: new Date(),
+  }));
+
+  const directoryCatRoutes = getDirectoryCategories().map((c) => ({
+    url: `${BASE}/directories/category/${encodeURIComponent(c.name)}`,
+    lastModified: new Date(),
+  }));
+
+  const tagRoutes = getTags().map((t) => ({
+    url: `${BASE}/tags/${encodeURIComponent(t.name)}`,
+    lastModified: new Date(),
+  }));
+
+  const keywordRoutes = KEYWORDS.map((k) => ({
+    url: `${BASE}/keywords/${encodeURIComponent(k)}`,
+    lastModified: new Date(),
+  }));
+
+  const extraStatic = [
+    "/compare",
+    "/free-ai-directories",
+    "/submit-ai-tool",
+    "/tools",
+    "/about-us",
+    "/tos",
+    "/privacy-policy",
+  ].map((p) => ({
+    url: `${BASE}${p}`,
+    lastModified: new Date(),
+  }));
+
+  const freeToolRoutes = freeTools.map((t) => ({
+    url: `${BASE}/tools/${t.slug}`,
+    lastModified: new Date(),
+  }));
+
   return [
     ...staticRoutes,
     ...toolRoutes,
@@ -46,5 +86,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryRoutes,
     ...authorRoutes,
     ...alternativeRoutes,
+    ...directoryRoutes,
+    ...directoryCatRoutes,
+    ...tagRoutes,
+    ...keywordRoutes,
+    ...extraStatic,
+    ...freeToolRoutes,
   ];
 }
